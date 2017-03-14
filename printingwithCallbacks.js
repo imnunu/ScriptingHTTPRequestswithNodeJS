@@ -22,19 +22,19 @@ var requestOptions = {
 function getHTML (options, callback) {
 
   /* Add your code here */
-  https.get(requestOptions, function(response) {
+  https.get(options, function(response) {
     var data = [];
     response.on('data', function(chunk){
       data.push(chunk);
     }).on('end',function() {
       var buffer = Buffer.concat(data);
-      console.log(buffer.toString());
+      callback(buffer.toString());
       });
   });
 }
 
 function printHTML (html) {
-  console.log(html);
+   console.log(html);
 }
 
 getHTML(requestOptions, printHTML);

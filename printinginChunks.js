@@ -21,10 +21,10 @@ function getAndPrintHTMLChunks () {
     response.setEncoding('utf-8');
     response.on('data', function(chunk){
 
-    console.log(chunk.toString() + '\n');
+      console.log(chunk.toString() + '\n');
     })
-
   });
 }
 
 getAndPrintHTMLChunks();
+
